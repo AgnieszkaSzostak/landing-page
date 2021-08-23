@@ -3,6 +3,14 @@ $textfont-one: 'Merriweather', serif;
 $navfont: 'Roboto', sans-serif;
 $textfont-two: 'Roboto Mono', monospace;
 
+/* Global */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 body {
   margin: 0;
 }
@@ -18,6 +26,9 @@ p {
 }
 
 
+
+/* Navigation */
+
 .navigation {
   width: 100%;
   position: absolute;
@@ -25,29 +36,29 @@ p {
   .row {
     flex-wrap: nowrap;
     align-items: center;
-  }
-}
-ul {
-  list-style-type: none;
-  text-align: center;
-  word-spacing: 50px;
-  line-height: 60%;
 
-  li {
-    display: inline-block;
-    text-transform: uppercase;
-    text-decoration: none;
-    font-size: 14px;
-    font-family: $navfont;
-    font-weight: 500;
+    ul {
+      list-style-type: none;
+      text-align: center;
+
+      li {
+        flex: 1;
+        text-transform: uppercase;
+        text-decoration: none;
+        font-size: 14px;
+        font-family: $navfont;
+        font-weight: 500;
 
 
-    a {
-      text-decoration: none;
-      color: white;
+        a {
+          text-decoration: none;
+          color: white;
+        }
+      }
     }
   }
 }
+
 
 .logo {
   text-transform: capitalize;
@@ -70,7 +81,7 @@ ul {
   display: flex;
   text-align: center;
   color: #FFFFFF;
-  line-height: 1.8em;
+
 
   .splash-inner {
       margin: auto;
@@ -80,6 +91,7 @@ ul {
         text-transform: uppercase;
         font-weight: 500;
         font-size: 68px;
+        margin-top: 10px;
 
       }
       .page-title {
@@ -88,10 +100,11 @@ ul {
         font-style: italic;
         font-size: 38px;
         text-transform: capitalize;
+        margin-bottom: 10px;
       }
       .btn {
         display: inline-block;
-        min-width: 250px;
+        width: 250px;
         margin: 25px auto 0 auto;
         padding: 20px 40px;
         border-radius: 3px;
@@ -100,12 +113,10 @@ ul {
         font-weight: bold;
         text-transform: uppercase;
         font-size: 18px;
-
         text-align: center;
         text-decoration: none;
         cursor: pointer;
         background-color: #FED136;
-
       }
   }
 }
@@ -203,7 +214,8 @@ section {
   }
 }
 /* Footer */
-footer {
+
+.footer {
   padding: 30px 0 30px 0;
   text-align: center;
   margin: auto 70px;
@@ -227,5 +239,33 @@ footer {
       border-radius: 50%;
       line-height: 40px;
     }
+  }
+}
+
+/* Media */
+
+@media (max-width: 767px) {
+
+  .splash {
+    .page-subtitle{
+      display: none;
+    }
+  }
+
+  .mb {
+    margin-bottom: 18px;
+  }
+
+  .footer {
+    .row {
+      flex-direction: column-reverse;
+    }
+  }
+}
+
+@media (max-width: 395px) {
+  .footer {
+    margin: 0;
+    font-size: 12px;
   }
 }
