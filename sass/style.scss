@@ -3,6 +3,9 @@ $textfont-one: 'Merriweather', serif;
 $navfont: 'Roboto', sans-serif;
 $textfont-two: 'Roboto Mono', monospace;
 
+body {
+  margin: 0;
+}
 
 p {
   color: #7F7978;
