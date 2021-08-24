@@ -2,30 +2,27 @@ $logofont: 'Style Script', cursive;
 $textfont-one: 'Merriweather', serif;
 $navfont: 'Roboto', sans-serif;
 $textfont-two: 'Roboto Mono', monospace;
+$color-one: #FED136;
+$color-two: #FFF;
+$color-three: #eff2f5;
+$color-four: #7F7978;
+$color-five: #111;
 
 /* Global */
 
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-}
 
 body {
   margin: 0;
 }
 
 p {
-  color: #7F7978;
+  color: $color-four;
 }
-
 
 .px {
   padding-right: 40px;
   padding-left: 40px;
 }
-
-
 
 /* Navigation */
 
@@ -37,9 +34,20 @@ p {
     flex-wrap: nowrap;
     align-items: center;
 
+    .logo {
+      text-transform: capitalize;
+      font-family: $logofont;
+      font-size: 28px;
+      font-style: italic;
+      color: $color-one;
+      text-align: center;
+      padding-right: 90px;
+    }
+
     ul {
       list-style-type: none;
       text-align: center;
+      padding: 0;
 
       li {
         flex: 1;
@@ -49,25 +57,17 @@ p {
         font-family: $navfont;
         font-weight: 500;
 
-
         a {
           text-decoration: none;
-          color: white;
+          color: $color-two;
+        }
+
+        a:hover {
+          color: $color-one;
         }
       }
     }
   }
-}
-
-
-.logo {
-  text-transform: capitalize;
-  font-family: $logofont;
-  font-size: 28px;
-  font-style: italic;
-  color: #FED136;
-  text-align: center;
-  padding-right: 90px;
 }
 
 /* Splash */
@@ -80,20 +80,20 @@ p {
   min-height: 700px;
   display: flex;
   text-align: center;
-  color: #FFFFFF;
-
+  color: $color-two;
 
   .splash-inner {
       margin: auto;
       max-width: 70%;
+
       .page-subtitle {
         font-family: $navfont;
         text-transform: uppercase;
         font-weight: 500;
-        font-size: 68px;
+        font-size: 60px;
         margin-top: 10px;
-
       }
+
       .page-title {
         font-family: $textfont-one;
         font-weight: 300;
@@ -102,13 +102,14 @@ p {
         text-transform: capitalize;
         margin-bottom: 10px;
       }
+
       .btn {
         display: inline-block;
-        width: 250px;
+        max-width: 250px;
         margin: 25px auto 0 auto;
         padding: 20px 40px;
         border-radius: 3px;
-        color: #ffffff;
+        color: $color-two;
         font-family: $navfont;
         font-weight: bold;
         text-transform: uppercase;
@@ -116,16 +117,15 @@ p {
         text-align: center;
         text-decoration: none;
         cursor: pointer;
-        background-color: #FED136;
+        background-color: $color-one;
       }
   }
 }
 
-
-
 /* Service*/
+
 section {
-  color: black;
+  color: $color-five;
 
   .section-header {
     text-align: center;
@@ -149,11 +149,10 @@ section {
   .container {
     text-align: center;
 
-
     .row {
 
         i {
-        color: #FED135;
+        color: $color-one;
         font-size: 50px;
         }
 
@@ -168,10 +167,7 @@ section {
 /* Our portfolio */
 
 .our-portfolio {
-  background-color: #eff2f5;
-
-
-
+  background-color: $color-three;
 
   .row {
     max-width: 1000px;
@@ -183,7 +179,6 @@ section {
       margin-bottom: 30px;
       display: flex;
       flex-direction: column;
-    }
 
       .card-img{
         width: 100%;
@@ -192,9 +187,7 @@ section {
 
       }
       .card-body {
-
-        background-color: white;
-
+        background-color: $color-two;
 
         .card-title {
           font-size: 20px;
@@ -211,8 +204,10 @@ section {
           font-style: italic;
         }
       }
+    }
   }
 }
+
 /* Footer */
 
 .footer {
@@ -234,8 +229,8 @@ section {
       font-size: 18px;
       width: 40px;
       height: 40px;
-      background-color: black;
-      color: white;
+      background-color: $color-one;
+      color: $color-two;
       border-radius: 50%;
       line-height: 40px;
     }
@@ -245,8 +240,27 @@ section {
 /* Media */
 
 @media (max-width: 767px) {
+  .navigation {
+    .row {
+      flex-wrap: wrap;
+      div:first-child {
+        order: 1;
+        .logo {
+        text-align: left;
+        }
+      }
+      ul {
+        display: flex;
+        li {
+          flex: 1;
+          flex-wrap: nowrap;
+        }
+      }
+    }
+  }
 
   .splash {
+
     .page-subtitle{
       display: none;
     }
@@ -257,6 +271,7 @@ section {
   }
 
   .footer {
+
     .row {
       flex-direction: column-reverse;
     }
@@ -267,5 +282,24 @@ section {
   .footer {
     margin: 0;
     font-size: 12px;
+  }
+
+
+}
+
+@media (min-width: 576px) and (max-width: 991px) {
+  .our-portfolio {
+
+    .container {
+      max-width: 100%;
+    }
+  }
+}
+@media (max-width: 466px) {
+  .our-portfolio {
+
+    .container {
+        padding: 0;
+    }
   }
 }
