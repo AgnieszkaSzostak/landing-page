@@ -2,11 +2,12 @@ $logofont: 'Style Script', cursive;
 $textfont-one: 'Merriweather', serif;
 $navfont: 'Roboto', sans-serif;
 $textfont-two: 'Roboto Mono', monospace;
-$color-one: #FED136;
-$color-two: #FFF;
-$color-three: #eff2f5;
-$color-four: #7F7978;
-$color-five: #111;
+
+$color-primary: #FED136;
+$color-font-one: #FFF;
+$color-background-main: #eff2f5;
+$color-background: #7F7978;
+$color-font-two: #111;
 
 /* Global */
 
@@ -16,10 +17,10 @@ body {
 }
 
 p {
-  color: $color-four;
+  color: $color-background-main;
 }
 
-.px {
+.padding-x {
   padding-right: 40px;
   padding-left: 40px;
 }
@@ -39,7 +40,7 @@ p {
       font-family: $logofont;
       font-size: 28px;
       font-style: italic;
-      color: $color-one;
+      color: $color-primary;
       text-align: center;
       padding-right: 90px;
     }
@@ -59,11 +60,11 @@ p {
 
         a {
           text-decoration: none;
-          color: $color-two;
+          color: $color-font-one;
         }
 
         a:hover {
-          color: $color-one;
+          color: $color-primary;
         }
       }
     }
@@ -80,7 +81,7 @@ p {
   min-height: 700px;
   display: flex;
   text-align: center;
-  color: $color-two;
+  color: $color-font-one;
 
   .splash-inner {
       margin: auto;
@@ -106,10 +107,10 @@ p {
       .btn {
         display: inline-block;
         max-width: 250px;
-        margin: 25px auto 0 auto;
+        margin: 25px auto 0;
         padding: 20px 40px;
         border-radius: 3px;
-        color: $color-two;
+        color: $color-font-one;
         font-family: $navfont;
         font-weight: bold;
         text-transform: uppercase;
@@ -117,7 +118,7 @@ p {
         text-align: center;
         text-decoration: none;
         cursor: pointer;
-        background-color: $color-one;
+        background-color: $color-primary;
       }
   }
 }
@@ -125,7 +126,7 @@ p {
 /* Service*/
 
 section {
-  color: $color-five;
+  color: $color-font-two;
 
   .section-header {
     text-align: center;
@@ -152,7 +153,7 @@ section {
     .row {
 
         i {
-        color: $color-one;
+        color: $color-primary;
         font-size: 50px;
         }
 
@@ -167,7 +168,7 @@ section {
 /* Our portfolio */
 
 .our-portfolio {
-  background-color: $color-three;
+  background-color: $color-background-main;
 
   .row {
     max-width: 1000px;
@@ -187,7 +188,7 @@ section {
 
       }
       .card-body {
-        background-color: $color-two;
+        background-color: $color-font-one;
 
         .card-title {
           font-size: 20px;
@@ -216,7 +217,7 @@ section {
   margin: auto 70px;
 
   p {
-    color: $color-five;
+    color: $color-font-two;
   }
 
   .list-inline {
@@ -229,8 +230,8 @@ section {
       font-size: 18px;
       width: 40px;
       height: 40px;
-      background-color: $color-one;
-      color: $color-two;
+      background-color: $color-primary;
+      color: $color-font-one;
       border-radius: 50%;
       line-height: 40px;
     }
@@ -240,17 +241,22 @@ section {
 /* Media */
 
 @media (max-width: 767px) {
+
   .navigation {
+
     .row {
       flex-wrap: wrap;
       div:first-child {
-        order: 1;
+      order: 1;
+
         .logo {
         text-align: left;
         }
       }
+
       ul {
         display: flex;
+
         li {
           flex: 1;
           flex-wrap: nowrap;
@@ -266,7 +272,7 @@ section {
     }
   }
 
-  .mb {
+  .margin-b {
     margin-bottom: 18px;
   }
 
